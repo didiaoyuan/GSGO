@@ -1,2 +1,52 @@
 # Distributed-Project
-Web Shopping about Distributed
+Web Shopping about Distributed 分布式电商  goshopping
+
+- （一）国际化
+- （二）项目工程介绍
+- （三）项目的使用效果图
+- （四）项目特点
+- （五）项目的基本结构（架构）
+- （六）集成方式
+- （七）使用方法
+- （八）混淆
+- （九）关于作者/组织及交流方式等信息。
+- （十）贡献者/贡献组织
+- （十一）鸣谢
+- （十二）版权信息
+
+
+# （一）国际化
+README [English]() | [中文]()
+> 目前没有英文
+
+# （二）项目工程介绍
+
+项目目录:
+ - Project 所有项目源代码)
+    - csgo      (后端)
+    - vue-post  (前端)
+ - ProjectDocuments (项目相关文档)
+ - README
+
+
+# （三）项目的使用效果图
+
+# （四）项目特点
+
+- Spring Boot
+
+# （五）项目的基本结构（架构）
+
+# （六）集成方式
+详情请查看 Maven 中的 pom.xml
+# （七）使用方法
+
+
+# （八）混淆
+
+# （九）关于作者/组织及交流方式等信息。
+- [didiaoyuan](https://github.com/LowApe)
+
+# （十）贡献者/贡献组织
+
+# （十一）鸣谢
