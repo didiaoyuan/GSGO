@@ -5,5 +5,5 @@ import top.blogcode.user.service.entity.User;
 
 @Mapper
 public interface UserMapper {
-    boolean insert(User user);
+    int insert(User user);
 }

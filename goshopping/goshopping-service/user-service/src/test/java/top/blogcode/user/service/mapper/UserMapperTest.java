@@ -21,8 +21,8 @@ public class UserMapperTest extends UserServiceApplicationTests {
         User user = new User();
 //        String uuid = UUID.randomUUID().toString();
 //        uuid.replace("-","");
-        user.setUserId(1L);
-        user.setUserAccount("tom");
+        user.setUser_id(1L);
+        user.setUser_account("tom");
         userMapper.insert(user);
     }
 }
