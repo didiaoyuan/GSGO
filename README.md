@@ -23,9 +23,9 @@ README [English]() | [中文]()
 
 项目目录:
  - Project 所有项目源代码)
-    - csgo      (后端)
-    - vue-post  (前端)
- - ProjectDocuments (项目相关文档)
+    - goshopping      (后端)
+    - goshopping-fontend  (前端)
+ - ProjectDocument (项目相关文档)
  - README
 
 
@@ -46,6 +46,7 @@ README [English]() | [中文]()
 
 # （九）关于作者/组织及交流方式等信息。
 - [didiaoyuan](https://github.com/LowApe)
+- 
 
 # （十）贡献者/贡献组织
 
