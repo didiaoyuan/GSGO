@@ -12,31 +12,31 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-//    /**
-//     * 注入用户服务操作
-//     */
-//    @Autowired
-//    private UserService userService;
-//
-//    /**
-//     * 获取全部结果列表端口
-//     * @return
-//     */
-//    @GetMapping
-//    public Result getList(){
-//        return Result.ok(userService.getList());
-//    }
-//
-//    /**
-//     * 添加用户信息,并返回结果
-//     * @param user
-//     * @return
-//     */
-//    @PostMapping
-//    public Result add(@RequestBody User user){
-//        if(userService.add(user)){
-//            return Result.ok("添加成功");
-//        }
-//        return Result.fail("添加失败");
-//    }
+    /**
+     * 注入用户服务操作
+     */
+    @Autowired
+    private UserService userService;
+
+    /**
+     * 获取全部结果列表端口
+     * @return
+     */
+    @GetMapping
+    public Result getList(){
+        return Result.ok(userService.getList());
+    }
+
+    /**
+     * 添加用户信息,并返回结果
+     * @param user
+     * @return
+     */
+    @PostMapping
+    public Result add(@RequestBody User user){
+        if(userService.add(user)){
+            return Result.ok("添加成功");
+        }
+        return Result.fail("添加失败");
+    }
 }

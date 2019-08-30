@@ -22,5 +22,8 @@ public class UserServiceImplTest extends UserServiceApplicationTests {
 
     @Test
     public void add() {
+        User user = new User();
+        user.setUser_account("tomNew");
+        userService.add(user);
     }
 }
