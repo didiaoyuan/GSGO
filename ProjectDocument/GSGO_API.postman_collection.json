@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "8b4c7262-15e3-4799-9b1c-4ddde2de9049",
+		"name": "GSGO_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8003/user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8003/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"user"
+					]
+				},
+				"description": "显示所有用户列表"
+			},
+			"response": []
+		}
+	]
+}
