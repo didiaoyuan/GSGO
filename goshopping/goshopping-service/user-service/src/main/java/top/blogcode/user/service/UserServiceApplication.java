@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@MapperScan("top.blogcode.user.service.mapper")
 public class UserServiceApplication {
 
     public static void main(String[] args) {

@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import top.blogcode.user.service.UserServiceApplicationTests;
 import top.blogcode.user.service.entity.User;
 import top.blogcode.user.service.service.UserService;
-
 import java.util.List;
 
-import static org.junit.Assert.*;
 @Slf4j
 public class UserServiceImplTest extends UserServiceApplicationTests {
 

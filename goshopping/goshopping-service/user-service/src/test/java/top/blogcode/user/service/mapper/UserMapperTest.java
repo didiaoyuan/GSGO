@@ -1,5 +1,6 @@
 package top.blogcode.user.service.mapper;
 
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.mybatis.spring.annotation.MapperScan;
@@ -23,7 +24,7 @@ public class UserMapperTest extends UserServiceApplicationTests {
 //        String uuid = UUID.randomUUID().toString();
 //        uuid.replace("-","");
 //        user.setUser_id(1L);
-        user.setUser_account("tom123123");
+        user.setUser_account("tom998");
         userMapper.insert(user);
     }
 }
