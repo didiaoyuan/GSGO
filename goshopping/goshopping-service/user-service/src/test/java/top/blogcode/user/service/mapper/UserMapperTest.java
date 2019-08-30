@@ -2,6 +2,7 @@ package top.blogcode.user.service.mapper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import top.blogcode.user.service.UserServiceApplicationTests;
 import top.blogcode.user.service.entity.User;

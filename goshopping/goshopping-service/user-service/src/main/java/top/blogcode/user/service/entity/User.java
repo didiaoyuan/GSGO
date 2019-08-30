@@ -14,7 +14,7 @@ public class User {
     private String user_pass;
     private String user_avatar;
     private Integer user_Phone;
-    @TableField(value = "",fill= FieldFill.INSERT)
+    @TableField(value = "register_time",fill= FieldFill.INSERT)
     private LocalDateTime register_time;
     private Long role_id;
 }

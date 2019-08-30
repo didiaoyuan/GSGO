@@ -1,6 +1,7 @@
 package top.blogcode.user.service.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import top.blogcode.user.service.entity.User;
 import top.blogcode.user.service.mapper.UserMapper;
 import top.blogcode.user.service.service.UserService;
@@ -9,7 +10,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    @Resource
+    @Autowired
     private UserMapper userMapper;
     @Override
     public List<User> getList() {
