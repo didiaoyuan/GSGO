@@ -19,6 +19,11 @@ export default new Router({
       component: ()=> import('@/components/Login.vue')
     }
     ,{
+      path: '/register',
+      name: 'register',
+      component: ()=> import('@/components/Register.vue')
+    }
+    ,{
       path: '/about',
       name: 'about',
       // route level code-splitting

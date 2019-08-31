@@ -1,58 +1,86 @@
  <template>
   <el-container>
     <el-header>Header</el-header>
-    <el-main>
-      <el-row type="flex" justify="center">
-        <el-col :span="6">
-          <el-input placeholder="请输入账号" v-model="input" clearable></el-input>
-          <el-input placeholder="请输入密码" v-model="pass" show-password></el-input>
-          <el-button type="primary">登录</el-button>
-        </el-col>
-      </el-row>
-    </el-main>
-    <el-footer>Footer</el-footer>
+    <el-row type="flex" justify="center">
+      <el-col :span="6" justify="center">
+        <el-main>
+          <el-image style="width: 100px; height: 100px" :src="url"></el-image>
+          <el-form
+            :model="ruleForm"
+            status-icon
+            :rules="rules"
+            ref="ruleForm"
+            class="demo-ruleForm"
+          >
+            <el-form-item label="类别" prop="user_account">
+              <el-select v-model="value" placeholder="请选择">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                ></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item label="账户" prop="user_account">
+              <el-input type="text" v-model="ruleForm.user_account"></el-input>
+            </el-form-item>
+            <el-form-item label="密码" prop="user_pass">
+              <el-input type="password" v-model="ruleForm.user_pass" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item>
+              <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
+            </el-form-item>
+          </el-form>
+        </el-main>
+      </el-col>
+    </el-row>
   </el-container>
 </template>
 <script>
 export default {
   data() {
     return {
-      input: "",
-      pass: ""
+      options: [
+        {
+          value: "选项1",
+          label: "管理员"
+        },
+        {
+          value: "选项2",
+          label: "普通会员"
+        },
+        {
+          value: "选项3",
+          label: "用户"
+        }
+      ],
+      value: "",
+      url:
+        "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
+      ruleForm: {
+        user_pass: "",
+        user_account: ""
+      },
+      rules: {
+        // pass: [{ validator: validatePass, trigger: "blur" }],
+        // checkPass: [{ validator: validatePass2, trigger: "blur" }]
+      }
     };
+  },
+  methods: {
+    submitForm(formName) {
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          alert("submit!");
+        } else {
+          console.log("error submit!!");
+          return false;
+        }
+      });
+    }
   }
 };
 </script>
 <style lang="scss" scoped>
-* {
-  //字体颜色
-  color: white;
-  // 背景图案
-  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-    linear-gradient(
-      #1d1d1d 25%,
-      #1a1a1a 25%,
-      #1a1a1a 50%,
-      transparent 50%,
-      transparent 75%,
-      #242424 75%,
-      #242424
-    );
-  background-color: #131313;
-  background-size: 20px 20px;
-}
-// 容器对齐方式
-.el-header,
-.el-footer {
-  text-align: center;
-  line-height: 60px;
-}
-
-.el-input{
-  margin:15px;
-}
 </style>

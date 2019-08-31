@@ -34,6 +34,8 @@ README [English]() | [中文]()
 
 开发环境:
  - IntelliJ IDEA
+    - Mybatis X 插件
+    - lombok 插件
  - Visual Studio code
  - Maven 3.6.1
  - Java 1.8.0
