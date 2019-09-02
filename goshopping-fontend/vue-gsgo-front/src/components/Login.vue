@@ -12,7 +12,7 @@
             ref="ruleForm"
             class="demo-ruleForm"
           >
-            <div class="login_title">GSGO登录</div>
+            <div class="login_title">GSGO管理平台</div>
             <el-form-item label="类型" prop="role_id">
               <el-col span="20">
                 <el-select v-model="ruleForm.role_id" placeholder="请选择" style="width:100%">
