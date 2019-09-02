@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="top.blogcode.user.service.mapper.UserMapper">
+    <select id="selectByAccount" resultMap="BaseResultMap"  parameterType="string">
+        select * from user where user_account=#{account};
+    </select>
+
+    <resultMap id="BaseResultMap" type="top.blogcode.user.service.entity.User">
+        <id property="user_id" column="user_id" jdbcType="INTEGER"/>
+        <result property="user_account" column="user_account" jdbcType="VARCHAR"/>
+        <result property="user_avatar" column="user_avatar" jdbcType="VARCHAR"/>
+        <result property="user_pass" column="user_pass" jdbcType="VARCHAR"/>
+        <result property="user_phone" column="user_phone" jdbcType="INTEGER"/>
+    </resultMap>
 </mapper>

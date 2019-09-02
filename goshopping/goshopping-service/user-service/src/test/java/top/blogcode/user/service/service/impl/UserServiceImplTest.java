@@ -14,12 +14,19 @@ public class UserServiceImplTest extends UserServiceApplicationTests {
 
     @Autowired
     private UserService userService;
+
+    /**
+     * 查询所有User对象
+     */
     @Test
     public void getList() {
         List<User> userList = userService.getList();
         log.info(JSONArray.toJSONString(userList));
     }
 
+    /**
+     * 添加User对象
+     */
     @Test
     public void add() {
         User user = new User();

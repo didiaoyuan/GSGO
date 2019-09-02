@@ -6,4 +6,5 @@ import top.blogcode.user.service.entity.User;
 
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
+    User selectByAccount(String account);
 }

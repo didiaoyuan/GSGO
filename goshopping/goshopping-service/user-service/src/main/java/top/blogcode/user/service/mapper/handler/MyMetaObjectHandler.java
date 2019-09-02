@@ -18,7 +18,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
         this.setInsertFieldValByName("createTime", LocalDateTime.now(), metaObject);//@since 快照：3.0.7.2-SNAPSHOT， @since 正式版暂未发布3.0.7
-        this.setInsertFieldValByName("updateTime", LocalDateTime.now(), metaObject);
+//        this.setInsertFieldValByName("updateTime", LocalDateTime.now(), metaObject);
     }
     /**
      * 当执行更新操作自动添加
@@ -26,6 +26,6 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
      */
     @Override
     public void updateFill(MetaObject metaObject) {
-        this.setFieldValByName("updateTime", LocalDateTime.now(), metaObject);
+        this.setUpdateFieldValByName("updateTime", LocalDateTime.now(), metaObject);
     }
 }

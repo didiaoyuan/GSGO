@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends BaseController{
     /**
      * 注入用户服务操作
      */
@@ -19,12 +19,12 @@ public class UserController {
     private UserService userService;
 
     /**
-     * 获取全部结果列表端口
+     * 获取全部用户结果列表端口
      * @return
      */
     @GetMapping
     public Result getList(){
-        return Result.ok(userService.getList());
+        return Result.ok("成功获取所有列表",userService.getList());
     }
 
     /**
@@ -38,5 +38,13 @@ public class UserController {
             return Result.ok("添加成功");
         }
         return Result.fail("添加失败");
+    }
+
+    @PostMapping("/login")
+    public Result login(@RequestBody User user){
+        if(userService.login(user)){
+            return Result.ok("登录成功");
+        }
+        return Result.fail("登录失败");
     }
 }
