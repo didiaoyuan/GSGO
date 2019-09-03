@@ -64,8 +64,7 @@ export default {
           label: "用户"
         }
       ],
-      value: ""
-      ,
+      value: "",
       url:
         "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
       ruleForm: {
@@ -73,17 +72,36 @@ export default {
         user_account: ""
       },
       rules: {
-        user_account: [{ required: true, message: "请输入账户名称", trigger: "blur" }],
+        user_account: [
+          { required: true, message: "请输入账户名称", trigger: "blur" }
+        ],
         user_pass: [{ required: true, message: "请输入密码", trigger: "blur" }],
-        role_id: [{ required: true, message: "选择登录类型", trigger: "change" }]
+        role_id: [
+          { required: true, message: "选择登录类型", trigger: "change" }
+        ]
       }
     };
   },
   methods: {
     submitForm(formName) {
+       this.$message({
+         showClose: true,
+                  message: "用户名或密码错误！！！",
+                  type: "warning"
+                });
       // 前端验证输入的有效性
       this.$refs[formName].validate(valid => {
         if (valid) {
+          // 加载动画
+          const loading = this.$loading({
+            lock: true,
+            text: "Loading",
+            spinner: "el-icon-loading",
+            background: "rgba(0, 0, 0, 0.7)"
+          });
+          setTimeout(() => {
+            loading.close();
+          }, 1000);
           // 进行http通信登录并判断跳转
           request
             .post("/user/login", {
@@ -94,9 +112,19 @@ export default {
               console.log(res.data);
               if (res.data.code === "0000") {
                 // 登录成功并跳转
+                this.$message({
+                  showClose: true,
+                  message: "登录成功",
+                  type: "success"
+                });
                 this.$router.push("/layout");
               } else {
                 // 提示登录失败
+                this.$message({
+                  showClose: true,
+                  message: "用户名或密码错误！！！",
+                  type: "warning"
+                });
               }
             });
         } else {
@@ -116,15 +144,15 @@ export default {
   margin: 15px auto;
 }
 
-el-button{
+el-button {
   background-color: white;
   width: 1000px;
 }
-.login_bg{
-// background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0,
-// radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0,
-// radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
-// background-size: 110px 200px;
-// background-repeat: repeat-x;
+.login_bg {
+  // background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0,
+  // radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0,
+  // radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
+  // background-size: 110px 200px;
+  // background-repeat: repeat-x;
 }
 </style>

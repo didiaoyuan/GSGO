@@ -17,10 +17,10 @@
           <span slot="title">
             <i class="el-icon-folder"></i>管理
           </span>
-          <el-menu-item index="2-1">用户管理</el-menu-item>
-          <el-menu-item index="2-2">卡卷管理</el-menu-item>
-          <el-menu-item index="2-3">商品管理</el-menu-item>
-          <el-menu-item index="2-4">订单管理</el-menu-item>
+          <el-menu-item index="2-1" @click="handleUser">用户管理</el-menu-item>
+          <el-menu-item index="2-2" @click="handleCard">卡卷管理</el-menu-item>
+          <el-menu-item index="2-3" @click="handleGood">商品管理</el-menu-item>
+          <el-menu-item index="2-4" @click="handleOrder">订单管理</el-menu-item>
         </el-menu-item-group>
 
         <el-menu-item-group>
@@ -59,11 +59,23 @@ export default {
     return {};
   },
   methods: {
-    handleOpen(key, keyPath) {
+    handleOpen(key, keyPath) {    //打开操作
       console.log(key, keyPath);
     },
-    handleClose(key, keyPath) {
+    handleClose(key, keyPath) {   //关闭操作
       console.log(key, keyPath);
+    },
+    handleUser(){                 //点击用户管理
+      this.$router.push("/layout/usersm")
+    },
+    handleOrder(){                //点击订单管理
+      this.$router.push("/layout/ordersm")
+    },
+    handleCard(){                 //点击卡卷管理
+      this.$router.push("/layout/usersm")
+    },
+    handleGood(){                //点击商品管理
+      this.$router.push("/layout/ordersm")
     }
   }
 };

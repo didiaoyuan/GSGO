@@ -25,8 +25,14 @@ export default new Router({
     }
     ,{
       path: '/layout',
-      name: 'laout',
-      component: ()=> import('@/components/Layout.vue')
+      name: 'layout',
+      component: ()=> import('@/components/Layout.vue'),
+      children:[
+        {path:'usersm',name:'usersm',component: ()=> import('@/views/layout/management/UsersM.vue')},
+        {path:'ordersm',name:'ordersm',component: ()=> import('@/views/layout/management/OrdersM.vue')},
+        {path:'goodsm',name:'goodsm',component: ()=> import('@/views/layout/management/GoodsM.vue')},
+        {path:'cardsm',name:'cardsm',component: ()=> import('@/views/layout/management/CardsM.vue')},
+      ]
     }
   ]
 })
