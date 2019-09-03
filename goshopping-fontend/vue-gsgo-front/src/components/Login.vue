@@ -84,7 +84,6 @@ export default {
       // 前端验证输入的有效性
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert("submit!");
           // 进行http通信登录并判断跳转
           request
             .post("/user/login", {
