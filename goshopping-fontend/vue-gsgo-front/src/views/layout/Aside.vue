@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-menu default-active="1-1" class="el-menu-vertical-demo">
+    <el-menu default-active="2-1" class="el-menu-vertical-demo">
       <el-submenu index="1">
         <template slot="title">
           <span>首页</span>
@@ -72,10 +72,10 @@ export default {
       this.$router.push("/layout/ordersm")
     },
     handleCard(){                 //点击卡卷管理
-      this.$router.push("/layout/usersm")
+      this.$router.push("/layout/cardsm")
     },
     handleGood(){                //点击商品管理
-      this.$router.push("/layout/ordersm")
+      this.$router.push("/layout/goodsm")
     }
   }
 };
