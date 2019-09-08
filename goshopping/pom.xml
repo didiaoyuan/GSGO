@@ -96,6 +96,12 @@
                 <artifactId>mybatis-plus-generator</artifactId>
                 <version>${mybatisplus.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>2.3.29</version>
+            </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-dts</artifactId>
@@ -111,6 +117,7 @@
                 <artifactId>fastjson</artifactId>
                 <version>1.2.59</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
     <build>
